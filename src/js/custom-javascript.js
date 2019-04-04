@@ -5,7 +5,7 @@ console.log("custom js fo lyfe!");
   let form_fields = [];
   let madlib_unfilled ="";
 
-  // immediately invoked fucntion to hide steps 2 & 3
+  // immediately invoked function to hide steps 2 & 3
   (function () {
     $("#step2-row").hide();
     $("#step3-row").hide();
@@ -21,7 +21,7 @@ console.log("custom js fo lyfe!");
     $("#loading1").show();
     let story = getStory();
     if (story.length < 10){
-      alert("Your story is too shot. Try again");
+      alert("Your story is too short. Try again");
       $("#loading1").hide();
     } else {
       setTimeout(()=>{
