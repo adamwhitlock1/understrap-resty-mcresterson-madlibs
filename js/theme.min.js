@@ -7057,6 +7057,8 @@ console.log("custom js fo lyfe!");
   (function () {
     $("#step2-row").hide();
     $("#step3-row").hide();
+    $("#loading1").hide();
+    $("#loading2").hide();
   })();
 
   $("#gen-story").click(function(){
@@ -7064,11 +7066,15 @@ console.log("custom js fo lyfe!");
   });
 
   $("#start").click(function(){
+    $("#loading1").show();
     let story = getStory();
     if (story.length < 10){
       alert("Your story is too shot. Try again");
+      $("#loading1").hide();
     } else {
-      ajaxSendStory(story);
+      setTimeout(()=>{
+        ajaxSendStory(story);
+      }, 1500)
     }
   })
 
@@ -7101,7 +7107,7 @@ console.log("custom js fo lyfe!");
     form_fields = [];
     madlib_unfilled = "";
     data.fields.map((field, index) => {
-      $("#step2-inputs").append(`<input type="text" id="${field}_${index}" placeholder="${field}">`);
+      $("#step2-inputs").append(`<div class="col-6"><input class="form-control form-control-lg mt-2" type="text" id="${field}_${index}" placeholder="${field}"></div>`);
       form_fields.push(`${field}_${index}`)
     })
     madlib_unfilled = data.madlib;
@@ -7142,7 +7148,10 @@ console.log("custom js fo lyfe!");
   }
 
   $("#gen-completed-madlib").click(()=>{
-    ajaxFinishStory(getFormFields());
+    $("#loading2").show();
+    setTimeout(()=>{
+      ajaxFinishStory(getFormFields());
+    }, 1000)
   })
 
 

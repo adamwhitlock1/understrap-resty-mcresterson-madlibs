@@ -35,18 +35,29 @@ $container = get_theme_mod( 'understrap_container_type' );
               <div class="col">
                 <textarea id="start-content" rows="15" cols="80"></textarea>
               </div>
-              <div class="col">
+              <div class="col text-center">
                 <button id="gen-story" class="btn btn-warning">Generate a story</button>
                 <button id="start" class="btn btn-success">Start</button>
+                <div id="loading1">
+                  <h4 class="mt-4 text-center">Loading template fields...</h4>
+                  <div class="loader">Loading...</div>
+                </div>
               </div>
             </div>
 
             <div class="row" id="step2-row">
-              <div class="col" id="step2-inputs">
+              <div class="col">
+                <div class="row" id="step2-inputs">
+
+                </div>
 
               </div>
-              <div class="col">
-                <button id="gen-completed-madlib" class="btn btn-danger">See your completed madlib</button>
+              <div class="col text-center">
+                <button id="gen-completed-madlib" class="btn btn-danger mt-2">See your completed madlib</button>
+                <div id="loading2">
+                  <h4 class="mt-4 text-center">Loading template fields...</h4>
+                  <div class="loader">Loading...</div>
+                </div>
               </div>
             </div>
 
